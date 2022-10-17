@@ -20,7 +20,7 @@ module.exports = {
 };
 
 
-// решение верное
+// решение верное но не проходит тест
 /* 
 function sortByHeight(arr) {
   return arr.sort((a, b) => {
@@ -32,4 +32,28 @@ function sortByHeight(arr) {
 }
 sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) */
 
+/* сравнение двух массивов и фильтрация
+var  arr = ['google.com', 'vk.com', 'mail.ru']
+var arr2 = ['facebook.com', 'google.com', 'vk.com', 'ya.ru', 'mail.ru']
+arr2 = arr2.filter(e => !~arr.indexOf(e)); */
+
+function sortByHeight(arr) {
+  let arr2 = arr.sort((a,b)=> a-b).filter((item)=>item !== -1);
+  console.log(arr2);
+  let newArr = [];
+  let newArr2 = arr2;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === -1) {
+      newArr.push([i])     
+    }   
+  } 
+  for (let j = 0; j < newArr.length; j++) {
+    newArr2.push(arr2.splice(newArr[j],-1))
+  }
+  console.log(newArr);  
+  console.log(newArr2);  
+
+}
+sortByHeight([-1, 150, 190, 170, -1, -1, 160, 180]) 
 //циклом проходился по массиву, сохранял индексы значений -1 потом сортировал массив. Потом добавлял -1 по нужным индексам. 
+

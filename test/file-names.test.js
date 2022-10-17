@@ -13,3 +13,4 @@ describe('File names', () => {
     assert.deepEqual(renameFiles([]), []);
   });
 });
+
