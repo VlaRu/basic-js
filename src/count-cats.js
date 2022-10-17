@@ -12,7 +12,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *  [0, '^^', 2],
  *  ['^^', 1, 2]
  * ]) => 3`
- *
+ *npm run test ./test/count-cats.test.js
  */
  function countCats(matrix) {
   let result = [].concat(...matrix);
